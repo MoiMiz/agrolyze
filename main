@@ -1,0 +1,59 @@
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            
+            // Logo
+            Image("agrolyze_just_logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .padding(.bottom, 20)
+            
+            // Title
+            Text("AgroLyze")
+                .font(.system(size: 36, weight: .bold, design: .serif))
+                .foregroundColor(.brown)
+                .padding(.horizontal)
+            
+            // Subtitle
+            Text("Your garden, our passion")
+                .font(.system(size: 20, weight: .medium, design: .serif))
+                .foregroundColor(.brown)
+                .padding(.horizontal)
+            
+            
+            Spacer()
+            
+            // Button
+            Button(action: {
+                // Action for the button
+                print("Get Started button tapped")
+            }) {
+                Text("Get Started")
+                    .font(.system(size: 20, weight: .semibold, design: .serif))
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.brown)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal, 20)
+            }
+            
+            Spacer()
+        }
+        .padding()
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.brown.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
